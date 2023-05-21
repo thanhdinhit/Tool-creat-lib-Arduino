@@ -34,8 +34,9 @@ def handle_change_name():
         print("Directory is empty")
     else:
         input_name();
-        # os.rename("Output\my_library", "Output\my_library1")
+        # rename folder
         os.rename("Output/my_library", "Output/"+str(nameLib_g))
+
         os.rename('Output/'+str(nameLib_g)+'/my_library.cpp', "Output/"+str(nameLib_g)+"/"+str(nameLib_g)+".cpp")
         replace_str('my_library', nameLib_g, "Output/"+str(nameLib_g)+"/"+str(nameLib_g)+".cpp")
         os.rename('Output/'+str(nameLib_g)+'/my_library.h', "Output/" + str(nameLib_g) + "/" + str(nameLib_g) + ".h")

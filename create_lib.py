@@ -1,7 +1,13 @@
 import shutil, errno
 import os
+import sys
+
 
 directory = os.path.dirname(os.path.abspath(__file__))
+if getattr(sys, 'frozen', False):
+    directory = os.path.dirname(sys.executable)
+elif __file__:
+    directory = os.path.dirname(__file__)
 
 src_g = os.path.join(directory, 'Resource_example')
 dst_g = os.path.join(directory, 'Output')
